@@ -1,0 +1,269 @@
+// Datos COMPLETOS de la malla curricular
+const curriculumData = [
+    {
+        year: "PRIMER AÑO",
+        periods: [
+            {
+                name: "Primer Período",
+                subjects: [
+                    { code: "ORI-100", name: "Orientación Universitaria", credits: 2, prereqs: [] },
+                    { code: "ECO-103", name: "Introducción a la Economía", credits: 4, prereqs: [] },
+                    { code: "SICO-100", name: "Introducción al Estudio de las Ciencias Sociales", credits: 3, prereqs: [] },
+                    { code: "CON-201", name: "Contabilidad I", credits: 4, prereqs: [] },
+                    { code: "IDI-700", name: "Inglés I", credits: 3, prereqs: [] },
+                    { code: "HIS-304", name: "Historia Crítica Dominicana", credits: 4, prereqs: [] },
+                    { code: "ESP-101", name: "Español I", credits: 4, prereqs: [] }
+                ]
+            },
+            {
+                name: "Segundo Período",
+                subjects: [
+                    { code: "MAT-101", name: "Matemática Superior I", credits: 4, prereqs: [] },
+                    { code: "IDI-701", name: "Inglés II", credits: 3, prereqs: ["IDI-700"] },
+                    { code: "ADM-050", name: "Principios de Administración", credits: 3, prereqs: [] },
+                    { code: "INF-121", name: "Procesamiento Electrónico de Datos", credits: 3, prereqs: [] },
+                    { code: "ECO-204", name: "Historia Económica", credits: 3, prereqs: ["ECO-103"] },
+                    { code: "BIO-500", name: "Ser Humano y Naturaleza", credits: 3, prereqs: [] },
+                    { code: "TEO-100", name: "Fundamentos de Teología", credits: 3, prereqs: [] }
+                ]
+            },
+            {
+                name: "Tercer Período",
+                subjects: [
+                    { code: "IDI-702", name: "Inglés III", credits: 3, prereqs: ["IDI-701"] },
+                    { code: "ESP-102", name: "Español II", credits: 4, prereqs: ["ESP-101"] },
+                    { code: "ECO-329", name: "Teoría del Desarrollo Económico", credits: 3, prereqs: ["ECO-103"] },
+                    { code: "MAT-102", name: "Matemática Superior II", credits: 4, prereqs: ["MAT-101"] },
+                    { code: "CON-202", name: "Contabilidad II", credits: 4, prereqs: ["CON-201"] },
+                    { code: "ECO-655", name: "Gerencia de Procesos", credits: 3, prereqs: ["ECO-103"] }
+                ]
+            }
+        ]
+    },
+    {
+        year: "SEGUNDO AÑO",
+        periods: [
+            {
+                name: "Primer Período",
+                subjects: [
+                    { code: "MAT-151", name: "Cálculo y Geometría Analítica I", credits: 4, prereqs: ["MAT-102"] },
+                    { code: "FEO-200", name: "Doctrina Social de la Iglesia", credits: 3, prereqs: [] },
+                    { code: "ECO-205", name: "Microeconomía I", credits: 4, prereqs: ["ECO-103"] },
+                    { code: "ECO-778", name: "Economía Matemática", credits: 3, prereqs: ["MAT-102"] },
+                    { code: "DER-100", name: "Fundamentos de Derecho", credits: 3, prereqs: [] }
+                ]
+            },
+            {
+                name: "Segundo Período",
+                subjects: [
+                    { code: "EST-111", name: "Estadística Descriptiva", credits: 3, prereqs: ["MAT-102"] },
+                    { code: "ECO-779", name: "Microeconomía II", credits: 4, prereqs: ["ECO-205"] },
+                    { code: "ECO-351", name: "Análisis de Costos", credits: 3, prereqs: ["CON-202"] },
+                    { code: "MAT-411", name: "Matemática Financiera I", credits: 4, prereqs: ["MAT-151"] },
+                    { code: "ECO-781", name: "Macroeconomía Nacional", credits: 3, prereqs: ["ECO-205"] },
+                    { code: "MER-101", name: "Mercadotecnia I", credits: 3, prereqs: [] },
+                    { code: "ECO-412", name: "Economía Dominicana", credits: 3, prereqs: ["ECO-103"] }
+                ]
+            },
+            {
+                name: "Tercer Período",
+                subjects: [
+                    { code: "EST-211", name: "Estadística Inferencial", credits: 3, prereqs: ["EST-111"] },
+                    { code: "ECO-210", name: "Macroeconomía I", credits: 3, prereqs: ["ECO-205"] },
+                    { code: "ECO-422", name: "Econometría I", credits: 3, prereqs: ["EST-111"] },
+                    { code: "ECO-345", name: "Economía I", credits: 3, prereqs: ["ECO-205"] },
+                    { code: "FIL-320", name: "Metodología de la Investigación", credits: 3, prereqs: ["EST-111"] },
+                    { code: "ECO-541", name: "Formulación y Evaluación de Proyectos de Inversión", credits: 4, prereqs: ["ECO-329"] }
+                ]
+            }
+        ]
+    },
+    {
+        year: "TERCER AÑO",
+        periods: [
+            {
+                name: "Primer Período",
+                subjects: [
+                    { code: "ECO-211", name: "Introducción a la Moneda y Banca", credits: 3, prereqs: ["ECO-210"] },
+                    { code: "ECO-441", name: "Introducción a la Economía Internacional", credits: 3, prereqs: ["ECO-205"] },
+                    { code: "ECO-315", name: "Econometría II", credits: 3, prereqs: ["EST-211"] },
+                    { code: "ECO-415", name: "Microeconomía II", credits: 3, prereqs: ["ECO-422"] },
+                    { code: "DER-509", name: "Derecho Comercial y Tributario", credits: 3, prereqs: ["DER-100"] },
+                    { code: "ADM-205", name: "Gestión del Talento Humano I", credits: 3, prereqs: ["ADM-050"] }
+                ]
+            },
+            {
+                name: "Segundo Período",
+                subjects: [
+                    { code: "ECO-311", name: "Finanzas Públicas", credits: 3, prereqs: ["ECO-211"] },
+                    { code: "ECO-346", name: "Economía II", credits: 3, prereqs: ["ECO-345"] },
+                    { code: "ECO-499", name: "Planificación Económica", credits: 3, prereqs: ["ECO-541"] },
+                    { code: "ADM-510", name: "Negocios Internacionales", credits: 3, prereqs: ["ECO-441"] },
+                    { code: "ECO-480", name: "Economía Agrícola", credits: 3, prereqs: [] },
+                    { code: "ECO-460", name: "Política Económica", credits: 3, prereqs: ["ECO-529"] }
+                ]
+            },
+            {
+                name: "Tercer Período",
+                subjects: [
+                    { code: "ECO-785", name: "Economía de la Salud - Economía Ambiental", credits: 3, prereqs: ["ECO-205"] },
+                    { code: "ECO-469", name: "Economía Empresarial", credits: 3, prereqs: ["ECO-655"] },
+                    { code: "ECO-470", name: "Finanzas Corporativas", credits: 3, prereqs: ["ECO-511"] },
+                    { code: "ADM-520", name: "Relaciones Corporativas", credits: 3, prereqs: [] },
+                    { code: "COM-451", name: "Política Fiscal", credits: 2, prereqs: ["CON-202"] },
+                    { code: "ELECTIVA-I", name: "Electiva I", credits: 3, prereqs: [] }
+                ]
+            }
+        ]
+    },
+    {
+        year: "CUARTO AÑO",
+        periods: [
+            {
+                name: "Primer Período",
+                subjects: [
+                    { code: "FECO-791", name: "Sistema de Marco Lógico para Proyectos", credits: 3, prereqs: ["ECO-541"] },
+                    { code: "FIL-721", name: "Ética Profesional", credits: 3, prereqs: [] },
+                    { code: "ECO-782", name: "Evaluación de Proyectos Sociales", credits: 3, prereqs: ["ECO-541"] },
+                    { code: "ECO-444", name: "Economía Laboral", credits: 2, prereqs: ["ECO-499"] },
+                    { code: "ADM-621", name: "Empresas Familiares", credits: 3, prereqs: ["ECO-499"] },
+                    { code: "ECO-700", name: "Pasantía", credits: 5, prereqs: [] },
+                    { code: "MET-900", name: "Seminario de Elaboración de Tesis de Grado", credits: 2, prereqs: ["FIL-320"] },
+                    { code: "ELECTIVA-II", name: "Electiva II", credits: 3, prereqs: [] }
+                ]
+            },
+            {
+                name: "Segundo Período",
+                subjects: [
+                    { code: "ECO-909", name: "Tesis de Grado", credits: 6, prereqs: ["MET-900"] }
+                ]
+            }
+        ]
+    },
+    {
+        year: "ASIGNATURAS ELECTIVAS",
+        periods: [
+            {
+                name: "Electiva I",
+                subjects: [
+                    { code: "ECO-788", name: "Economía Bancaria", credits: 3, prereqs: [] },
+                    { code: "MER-170", name: "Marketing de Servicios", credits: 3, prereqs: [] },
+                    { code: "ADM-612", name: "Gestión del Estrés Laboral", credits: 3, prereqs: [] }
+                ]
+            },
+            {
+                name: "Electiva II",
+                subjects: [
+                    { code: "ADM-609", name: "Coaching como Herramienta Eficaz de Gestión", credits: 3, prereqs: [] },
+                    { code: "ADM-610", name: "Administración de Conflictos y Resolución de Problemas", credits: 3, prereqs: [] }
+                ]
+            }
+        ]
+    }
+];
+
+// Estado de las materias completadas
+let completedSubjects = JSON.parse(localStorage.getItem('completedSubjects')) || [];
+
+// Renderizar la malla curricular
+function renderCurriculum() {
+    const yearsContainer = document.querySelector('.years-container');
+    yearsContainer.innerHTML = '';
+    
+    let totalSubjects = 0;
+    let completedCount = 0;
+    
+    curriculumData.forEach(yearData => {
+        const yearSection = document.createElement('div');
+        yearSection.className = 'year-section';
+        
+        const yearTitle = document.createElement('h2');
+        yearTitle.className = 'year-title';
+        yearTitle.textContent = yearData.year;
+        yearSection.appendChild(yearTitle);
+        
+        const periodsContainer = document.createElement('div');
+        periodsContainer.className = 'periods-container';
+        
+        yearData.periods.forEach(period => {
+            const periodElement = document.createElement('div');
+            periodElement.className = 'period';
+            
+            const periodTitle = document.createElement('h3');
+            periodTitle.className = 'period-title';
+            periodTitle.textContent = period.name;
+            periodElement.appendChild(periodTitle);
+            
+            period.subjects.forEach(subject => {
+                totalSubjects++;
+                
+                const subjectElement = document.createElement('div');
+                subjectElement.className = 'subject';
+                subjectElement.dataset.code = subject.code;
+                
+                const subjectCode = document.createElement('div');
+                subjectCode.className = 'subject-code';
+                subjectCode.textContent = subject.code;
+                subjectElement.appendChild(subjectCode);
+                
+                const subjectName = document.createElement('div');
+                subjectName.className = 'subject-name';
+                subjectName.textContent = subject.name;
+                subjectElement.appendChild(subjectName);
+                
+                const subjectDetails = document.createElement('div');
+                subjectDetails.className = 'subject-details';
+                subjectDetails.textContent = `${subject.credits} créditos`;
+                subjectElement.appendChild(subjectDetails);
+                
+                // Verificar estado de la materia
+                if (completedSubjects.includes(subject.code)) {
+                    subjectElement.classList.add('completed');
+                    completedCount++;
+                } else {
+                    const allPrereqsCompleted = subject.prereqs.every(prereq => 
+                        completedSubjects.includes(prereq)
+                    );
+                    
+                    if (subject.prereqs.length === 0 || allPrereqsCompleted) {
+                        subjectElement.classList.add('available');
+                        subjectElement.addEventListener('click', () => completeSubject(subject.code));
+                    } else {
+                        subjectElement.classList.add('locked');
+                    }
+                }
+                
+                periodElement.appendChild(subjectElement);
+            });
+            
+            periodsContainer.appendChild(periodElement);
+        });
+        
+        yearSection.appendChild(periodsContainer);
+        yearsContainer.appendChild(yearSection);
+    });
+    
+    // Actualizar barra de progreso
+    const progressPercent = totalSubjects > 0 ? Math.round((completedCount / totalSubjects) * 100) : 0;
+    document.querySelector('.progress-fill').style.width = `${progressPercent}%`;
+    document.getElementById('progress-text').textContent = `${progressPercent}% completado`;
+}
+
+// Marcar una materia como completada
+function completeSubject(subjectCode) {
+    if (!completedSubjects.includes(subjectCode)) {
+        completedSubjects.push(subjectCode);
+        localStorage.setItem('completedSubjects', JSON.stringify(completedSubjects));
+        renderCurriculum();
+    }
+}
+
+// Reiniciar progreso
+document.getElementById('reset-btn').addEventListener('click', () => {
+    completedSubjects = [];
+    localStorage.setItem('completedSubjects', JSON.stringify(completedSubjects));
+    renderCurriculum();
+});
+
+// Inicializar
+renderCurriculum();
